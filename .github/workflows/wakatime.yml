@@ -1,0 +1,13 @@
+ name: Update Wakatime Stats
+  on:
+    schedule:
+      - cron: "0 0 * * *"          # 每天凌晨12点运行（UTC时间）
+    workflow_dispatch:             # 允许手动触发
+
+  jobs:
+    update-readme:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: athul/waka-readme@master
+          with:
+            WAKATIME_API_KEY: waka_78432b36-c32f-4494-b87e-d3b38d4da6b4
